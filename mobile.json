@@ -1,0 +1,675 @@
+[
+  {
+    "title": "产品设计作品集",
+    "blocks": [],
+    "sourceNode": "693:64"
+  },
+  {
+    "title": "懂业务现场，以设计与数据推动产品落地",
+    "blocks": [
+      {
+        "text": "业务与用户拆解",
+        "heading": true
+      },
+      {
+        "text": "通过访谈 + 数据分析挖掘真实需求，拆解复杂业务链路，依靠量化研究定位业务痛点",
+        "heading": false
+      },
+      {
+        "text": "多形态方案设计",
+        "heading": true
+      },
+      {
+        "text": "覆盖 C 端互联产品、B 端产业数字化平台，能针对不同业务场景输出兼顾体验与约束的落地方案",
+        "heading": false
+      },
+      {
+        "text": "量化评估与迭代",
+        "heading": true
+      },
+      {
+        "text": "搭建产品指标评估体系，依靠数据识别体验问题，持续驱动产品迭代与方案优化取舍",
+        "heading": false
+      },
+      {
+        "text": "跨多方项目交付",
+        "heading": true
+      },
+      {
+        "text": "对接客户，联动多职能团队，独立推进 0-1 项目落地，拥有跨文化协同与项目管理经验",
+        "heading": false
+      }
+    ],
+    "sourceNode": "693:134"
+  },
+  {
+    "title": "让空间方案成为可交互的体验",
+    "blocks": [
+      {
+        "text": "整合户型查找、空间设计、模型摆放、效果渲染与 3D 漫游的一体化",
+        "heading": false
+      },
+      {
+        "text": "平台面向家装、工装、展厅与博物馆等场景，连接空间方案制作与展示",
+        "heading": false
+      },
+      {
+        "text": "负责平台整体产品设计，独立迭代漫游模块",
+        "heading": false
+      },
+      {
+        "text": "01 当前产品能力",
+        "heading": true
+      },
+      {
+        "text": "3D 方案搭建、模型管理",
+        "heading": false
+      },
+      {
+        "text": "效果渲染、漫游编辑与全屋展示",
+        "heading": false
+      },
+      {
+        "text": "02 长期愿景",
+        "heading": true
+      },
+      {
+        "text": "销售方案衔接生产",
+        "heading": false
+      },
+      {
+        "text": "直接投产链路完全打通",
+        "heading": false
+      },
+      {
+        "text": "03 我的参与",
+        "heading": true
+      },
+      {
+        "text": "产品设计、支持客户定制",
+        "heading": false
+      },
+      {
+        "text": "企业客户培训、软件现场路演",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:212"
+  },
+  {
+    "title": "从展示到生产交接，识别关键协作点",
+    "blocks": [
+      {
+        "text": "以方案展示为切入点，梳理创建、确认与生产交接中的任务和信息流转。",
+        "heading": false
+      },
+      {
+        "text": "销售与设计师",
+        "heading": true
+      },
+      {
+        "text": "搭建空间方案，调整布局与模型",
+        "heading": false
+      },
+      {
+        "text": "关注上手效率与改稿成本",
+        "heading": false
+      },
+      {
+        "text": "观看用户",
+        "heading": true
+      },
+      {
+        "text": "通过效果图与漫游理解空间",
+        "heading": false
+      },
+      {
+        "text": "提出修改意见，确认最终方案",
+        "heading": false
+      },
+      {
+        "text": "工厂技术",
+        "heading": true
+      },
+      {
+        "text": "复核尺寸、物料与工艺要求",
+        "heading": false
+      },
+      {
+        "text": "通过独立拆单，衔接生产准备",
+        "heading": false
+      },
+      {
+        "text": "在哪些环节交接",
+        "heading": true
+      },
+      {
+        "text": "01 需求确认",
+        "heading": true
+      },
+      {
+        "text": "明确空间用途、尺寸",
+        "heading": false
+      },
+      {
+        "text": "与客户展示需求",
+        "heading": false
+      },
+      {
+        "text": "02 方案搭建",
+        "heading": true
+      },
+      {
+        "text": "完成布局、模型摆放",
+        "heading": false
+      },
+      {
+        "text": "及材质配置",
+        "heading": false
+      },
+      {
+        "text": "03 展示与改稿",
+        "heading": true
+      },
+      {
+        "text": "呈现效果图与漫游",
+        "heading": false
+      },
+      {
+        "text": "收集意见并调整方案",
+        "heading": false
+      },
+      {
+        "text": "04 深化与拆单",
+        "heading": true
+      },
+      {
+        "text": "复核尺寸与物料工艺",
+        "heading": false
+      },
+      {
+        "text": "另行拆单后进入生产",
+        "heading": false
+      },
+      {
+        "text": "设计重点与产品思路",
+        "heading": false
+      },
+      {
+        "text": "让方案更直观，让客户更容易理解呈现空间效果",
+        "heading": false
+      },
+      {
+        "text": "通过观看与讲解，让客户更容易理解设计意图，为方案确认提供支持。",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:545"
+  },
+  {
+    "title": "用户存量多，不代表需求更强",
+    "blocks": [
+      {
+        "text": "从最初看好家装，到重新关注工装、展厅等企业",
+        "heading": false
+      },
+      {
+        "text": "预期",
+        "heading": true
+      },
+      {
+        "text": "5w家装用户较多，在前期分析中认为，漫游需求也会更大",
+        "heading": false
+      },
+      {
+        "text": "进入市场后，免费试用并没有自然带来持续使用。",
+        "heading": false
+      },
+      {
+        "text": "用户规模与真实需求之间出现了差异",
+        "heading": false
+      },
+      {
+        "text": "洞察",
+        "heading": true
+      },
+      {
+        "text": "持续使用与明确诉求，比一次试用更能帮助识别需求",
+        "heading": false
+      },
+      {
+        "text": "依据",
+        "heading": true
+      },
+      {
+        "text": "推广与客户使用中的定性反馈，不将经验观察换算为精确占比或付费率",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:308"
+  },
+  {
+    "title": "优先把共性需求，沉淀为标准能力",
+    "blocks": [
+      {
+        "text": "需求反复出现",
+        "heading": false
+      },
+      {
+        "text": "结合客户反馈与平台方向，让值得复用的定制功能进入标准版。",
+        "heading": false
+      },
+      {
+        "text": "复盘时的判断依据",
+        "heading": true
+      },
+      {
+        "text": "能够跨行业达到客户复用",
+        "heading": false
+      },
+      {
+        "text": "符合平台方向",
+        "heading": false
+      },
+      {
+        "text": "付费意愿强",
+        "heading": false
+      },
+      {
+        "text": "兼顾实现约束",
+        "heading": false
+      },
+      {
+        "text": "实现与维护成本",
+        "heading": false
+      },
+      {
+        "text": "语音讲解",
+        "heading": true
+      },
+      {
+        "text": "为漫游补充内容说明，让空间展示更易理解。",
+        "heading": false
+      },
+      {
+        "text": "文字转语音",
+        "heading": true
+      },
+      {
+        "text": "将讲解文案转换为语音，支持内容制作与调整。",
+        "heading": false
+      },
+      {
+        "text": "音色选择",
+        "heading": true
+      },
+      {
+        "text": "选择讲解音色，适配不同展示内容。",
+        "heading": false
+      },
+      {
+        "text": "自动播放",
+        "heading": true
+      },
+      {
+        "text": "减少连续手动操作，便于观看与演示。",
+        "heading": false
+      },
+      {
+        "text": "3D 户型鸟瞰",
+        "heading": true
+      },
+      {
+        "text": "从全局查看空间，帮助理解整体布局。",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:340"
+  },
+  {
+    "title": "两类内容场景来源，汇入同一套漫游流程",
+    "blocks": [
+      {
+        "text": "原生平台内设计场景，也支持符合规范的 3ds Max 模型进入漫游生成。",
+        "heading": false
+      },
+      {
+        "text": "从能力集合，到完整任务",
+        "heading": true
+      },
+      {
+        "text": "01 / 准备场景",
+        "heading": true
+      },
+      {
+        "text": "平台内场景或符合规范的外部模型，进入漫游制作。",
+        "heading": false
+      },
+      {
+        "text": "02 / 配置展示",
+        "heading": true
+      },
+      {
+        "text": "编辑热点与空间信息，配置讲解内容、音色及观看方式。",
+        "heading": false
+      },
+      {
+        "text": "03 / 预览与发布",
+        "heading": true
+      },
+      {
+        "text": "确认内容与呈现效果，再用于方案沟通或场景展示。",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:425"
+  },
+  {
+    "title": "让空间定位与内容编辑保持联动",
+    "blocks": [
+      {
+        "text": "围绕“放在哪里、编辑什么”，组织热点编辑的入口、状态与配置项。",
+        "heading": false
+      },
+      {
+        "text": "空间中的位置，与列表中的内容相互对应。",
+        "heading": true
+      },
+      {
+        "text": "01 / 场景与列表双入口",
+        "heading": true
+      },
+      {
+        "text": "从场景热点或列表进入编辑，当前热点可拖动。",
+        "heading": false
+      },
+      {
+        "text": "兼顾空间定位与快速查找。",
+        "heading": false
+      },
+      {
+        "text": "02 / 按状态与类型展开",
+        "heading": true
+      },
+      {
+        "text": "无热点时引导创建；已有热点显示列表。",
+        "heading": false
+      },
+      {
+        "text": "随内容类型切换编辑项，减少无关字段。",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:487"
+  },
+  {
+    "title": "官网内容与搜索优化全工作流",
+    "blocks": [
+      {
+        "text": "产品能力向外落地：跳出内部视角，让企业客户搜得到、看得懂、愿咨询",
+        "heading": false
+      },
+      {
+        "text": "关键词梳理 → 场景内容匹配",
+        "heading": false
+      },
+      {
+        "text": "→ 行为与咨询反馈 → 持续迭代",
+        "heading": false
+      },
+      {
+        "text": "价值目标：深度挖掘用户真实搜索意图，帮助客户快速定位、充分理解产品价值，消解信息差，降低供需双方沟通障碍，提升官网内容转化能力，让官网高效承接精准流量与有效咨询，实现用户体验与业务转化双向提升",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:585"
+  },
+  {
+    "title": "以持续使用判断需求，以真实证据校准方案",
+    "blocks": [
+      {
+        "text": "基于不同业务场景，对比分析试用留存、付费转化、功能实际使用数据，",
+        "heading": false
+      },
+      {
+        "text": "记录样本规模，持续观测用户真实行为，用真实业务表现替代主观判断。",
+        "heading": false
+      },
+      {
+        "text": "落地持续商业化目标",
+        "heading": false
+      },
+      {
+        "text": "弱化人工干预能力",
+        "heading": false
+      },
+      {
+        "text": "搭建高可用自助式服务",
+        "heading": false
+      },
+      {
+        "text": "借助 AI 能力完成用户信息、业务数据的辅助归纳汇总，设计师以真实数据证据为基础，开展方案研判与设计决策。通过自助化服务模式，释放人力成本，支撑产品规模化商业落地。",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:255"
+  },
+  {
+    "title": "HMI 产品设计",
+    "blocks": [
+      {
+        "text": "中控大屏&TSP双端设计",
+        "heading": false
+      },
+      {
+        "text": "担任腾讯智慧出行项目产品设计师，深度对接北京汽车、比亚迪丰田、凯翼汽车、上汽大众等主机厂，承担车载 HMI、手机端车控 APP 操作系统从需求到落地的全链路产品设计工作",
+        "heading": false
+      },
+      {
+        "text": "仅展示部分功能效果，项目完整细节可联系本人沟通",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:1052"
+  },
+  {
+    "title": "座舱娱乐界面",
+    "blocks": [
+      {
+        "text": "遵循车载安全交互原则，平衡信息展示密度与驾驶注意力负荷",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:1060"
+  },
+  {
+    "title": "TSP 手机车控 APP",
+    "blocks": [
+      {
+        "text": "中控大屏&TSP双端设计",
+        "heading": false
+      },
+      {
+        "text": "面向车主的车载生活服务 APP，依托 TSP 车联网平台，实现车辆与移动端的双向互联",
+        "heading": false
+      },
+      {
+        "text": "同时承载车主生态服务：车主社区、精品商城、线上购车服务",
+        "heading": false
+      },
+      {
+        "text": "以车辆为核心，融合远程控车、社交、电商等多元能力，打造覆盖购车、用车、养车全链路的车主生活服务平台",
+        "heading": false
+      },
+      {
+        "text": "实际经验已沉淀为论文，发布在《Modem Society and Economy》",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:1068"
+  },
+  {
+    "title": "把分散的合同修改与问题，带回原文逐项复核",
+    "blocks": [
+      {
+        "text": "LEGAL × AI 方案",
+        "heading": false
+      },
+      {
+        "text": "通威法务部AI产品",
+        "heading": true
+      },
+      {
+        "text": "面向法务合同审阅场景，聚焦“改了哪里”与“哪里需要关注”，辅助判断而不替代最终决策。",
+        "heading": false
+      },
+      {
+        "text": "01 / 改动分散，逐项查找费力",
+        "heading": true
+      },
+      {
+        "text": "对照基准版与回传版，标出新增、删除与替换。",
+        "heading": false
+      },
+      {
+        "text": "02 / 提示脱离原文，核对成本高",
+        "heading": true
+      },
+      {
+        "text": "将问题说明与证据关联，保留上下文供人工复核。",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:1080"
+  },
+  {
+    "title": "让修改、依据与处理意见，在同一视野内对齐",
+    "blocks": [
+      {
+        "text": "核心方案：左侧保留合同上下文，右侧解释提示；点击任一侧，可定位关联内容。",
+        "heading": false
+      },
+      {
+        "text": "01 / 修改事实 ≠ 风险判断",
+        "heading": true
+      },
+      {
+        "text": "版本差异与 AI 提示分开展示，避免把所有改动都判定为风险。",
+        "heading": false
+      },
+      {
+        "text": "02 / 先看证据，再作判断",
+        "heading": true
+      },
+      {
+        "text": "提示关联原文；多处依据逐一定位，缺失条款不伪造高亮。",
+        "heading": false
+      },
+      {
+        "text": "03 / AI 提建议，人作决定",
+        "heading": true
+      },
+      {
+        "text": "保留确认、忽略与备注；不自动覆盖原文，不自动接受修订。",
+        "heading": false
+      },
+      {
+        "text": "发现修改 → 定位原文 → 理解提示 → 人工处理 / 条款与数值仅作交互示例",
+        "heading": true
+      }
+    ],
+    "sourceNode": "695:1164"
+  },
+  {
+    "title": "将 AI 能力转成有依据、可定位、由人控制的合同审阅流程",
+    "blocks": [
+      {
+        "text": "我负责 / 概念方案与设计",
+        "heading": true
+      },
+      {
+        "text": "明确核心任务与界面关系，呈现修改、提示及人工处理路径。",
+        "heading": false
+      },
+      {
+        "text": "后续 / 开发团队承接",
+        "heading": true
+      },
+      {
+        "text": "技术实现、联调与上线验证由其他团队推进，不在本案例中宣称结果。",
+        "heading": false
+      },
+      {
+        "text": "三条可信边界",
+        "heading": true
+      },
+      {
+        "text": "不自动改合同",
+        "heading": false
+      },
+      {
+        "text": "建议供参考，原文件保持不变。",
+        "heading": false
+      },
+      {
+        "text": "不把“零提示”写成“无风险”",
+        "heading": false
+      },
+      {
+        "text": "披露分析范围与未覆盖内容。",
+        "heading": false
+      },
+      {
+        "text": "不替代专业判断",
+        "heading": false
+      },
+      {
+        "text": "涉及证据不足或异常，转人工复核。",
+        "heading": false
+      },
+      {
+        "text": "开发后建议验证什么？",
+        "heading": true
+      },
+      {
+        "text": "修改是否找全",
+        "heading": true
+      },
+      {
+        "text": "用脱敏样本核对增删替换，分别记录误报与漏报。",
+        "heading": false
+      },
+      {
+        "text": "证据是否可信",
+        "heading": true
+      },
+      {
+        "text": "检查提示引用与双向定位，覆盖跨条款和解析失败。",
+        "heading": false
+      },
+      {
+        "text": "审阅是否有效",
+        "heading": true
+      },
+      {
+        "text": "比较同类任务耗时与漏项，观察人工处理和忽略原因。",
+        "heading": false
+      },
+      {
+        "text": "prd完整版本，请与本人联系",
+        "heading": false
+      }
+    ],
+    "sourceNode": "695:1213"
+  },
+  {
+    "title": "工作之外，我是这样的人",
+    "blocks": [],
+    "sourceNode": "693:108"
+  },
+  {
+    "title": "From Insight to Delivery",
+    "blocks": [],
+    "sourceNode": "693:94"
+  }
+]

@@ -1,41 +1,34 @@
-const main=document.querySelector('#pages'),links=document.querySelector('#links'),contents=document.querySelector('#contents'),menu=document.querySelector('#menu'),viewer=document.querySelector('#viewer');
-function setMenu(open){contents.hidden=!open;menu.setAttribute('aria-expanded',String(open))}menu.onclick=()=>setMenu(contents.hidden);document.querySelector('#close-menu').onclick=()=>setMenu(false);document.querySelector('#close-viewer').onclick=()=>viewer.close();viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close()});document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
-fetch('pages.json').then(r=>{if(!r.ok)throw Error('页面清单加载失败');return r.json()}).then(pages=>{pages.forEach((p,i)=>{const n=String(i+1).padStart(2,'0'),section=document.createElement('section');section.className='page';section.id=`page-${i+1}`;section.dataset.number=n;const label=document.createElement('div');label.className='page-label';const title=document.createElement('strong');title.textContent=`${n} / ${p.group} · ${p.title}`;const hint=document.createElement('span');hint.textContent='点击画板放大 ↗';label.append(title,hint);const button=document.createElement('button');button.className='artwork';button.setAttribute('aria-label',`放大查看：${p.group} · ${p.title}`);const img=document.createElement('img');img.src=p.src;img.alt=`${p.group}：${p.title}`;img.width=p.width;img.height=p.height;img.loading=i===0?'eager':'lazy';img.decoding='async';if(i===0)img.fetchPriority='high';button.append(img);button.onclick=()=>{const large=document.querySelector('#large-image');large.src=p.src;large.alt=img.alt;large.width=p.width;large.height=p.height;document.querySelector('#viewer-title').textContent=img.alt;viewer.showModal();document.querySelector('.image-scroll').scrollTo(0,0)};section.append(label,button);main.append(section);const link=document.createElement('a');link.href=`#page-${i+1}`;const num=document.createElement('small');num.textContent=n;link.append(num,document.createTextNode(`${p.group} · ${p.title}`));link.onclick=()=>setMenu(false);links.append(link)});setupDeck(pages);}).catch(()=>{main.textContent='页面暂时未能加载，请刷新重试。'});
-function setupDeck(pages){
- const slides=[...main.children], progress=document.querySelector('#progress');let current=0;
- const reading=document.querySelector('.reading');reading.innerHTML='<button id="previous" aria-label="上一页">←</button><span id="deck-progress" aria-live="polite"></span><button id="next" aria-label="下一页">→</button>';
- const prev=document.querySelector('#previous'),next=document.querySelector('#next');
- const tip=document.createElement('div');tip.className='deck-tip';tip.textContent='向下滚动翻页 · 点击画板放大';document.body.append(tip);
- function go(index,write=true){
-  current=Math.max(0,Math.min(slides.length-1,index));main.style.transform=`translate3d(${-current*100}%,0,0)`;
-  slides.forEach((slide,i)=>{slide.inert=i!==current;slide.setAttribute('aria-hidden',String(i!==current));});
-  document.querySelector('#deck-progress').textContent=`${String(current+1).padStart(2,'0')} / ${slides.length}`;
-  prev.disabled=current===0;next.disabled=current===slides.length-1;
-  if(write)history.replaceState(null,'',`#page-${current+1}`);
-  for(let i=current;i<=Math.min(current+1,slides.length-1);i++)slides[i].querySelector('img').loading='eager';
+const main=document.querySelector('#pages'),links=document.querySelector('#links'),contents=document.querySelector('#contents'),menu=document.querySelector('#menu'),scrim=document.querySelector('#menu-scrim'),viewer=document.querySelector('#viewer');
+const mobile=matchMedia('(max-width: 700px)');let goTo=()=>{};
+function node(tag,className,text){const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el;}
+function setMenu(open){contents.hidden=!open;scrim.hidden=!open;menu.setAttribute('aria-expanded',String(open));if(open)document.querySelector('#close-menu').focus();}
+menu.onclick=()=>setMenu(contents.hidden);scrim.onclick=()=>setMenu(false);document.querySelector('#close-menu').onclick=()=>{setMenu(false);menu.focus()};
+document.querySelector('#close-viewer').onclick=()=>viewer.close();viewer.addEventListener('click',e=>{if(e.target===viewer)viewer.close()});
+document.querySelector('#image-size').onclick=()=>{const full=viewer.classList.toggle('original-size');document.querySelector('#image-size').textContent=full?'适合屏幕':'原尺寸'};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!contents.hidden){setMenu(false);menu.focus()}});
+function openArtwork(p){const image=document.querySelector('#large-image');image.src=p.src;image.alt=`${p.group}：${p.title}`;image.width=p.width;image.height=p.height;document.querySelector('#viewer-title').textContent=image.alt;viewer.classList.remove('original-size');document.querySelector('#image-size').textContent='原尺寸';viewer.showModal();document.querySelector('.image-scroll').scrollTo(0,0);}
+function artwork(p,i,className){const b=node('button',className);b.type='button';b.setAttribute('aria-label',`放大查看：${p.group} · ${p.title}`);const img=node('img');img.src=p.src;img.alt=`${p.group}：${p.title}`;img.width=p.width;img.height=p.height;img.loading=i===0?'eager':'lazy';img.decoding='async';b.append(img);b.onclick=()=>openArtwork(p);return b;}
+function mobileArticle(p,data,i){
+ const article=node('article','mobile-article');article.append(node('p','eyebrow',`${String(i+1).padStart(2,'0')} / ${p.group}`));
+ if(i===0){article.classList.add('mobile-cover');article.append(node('p','works','Works'),node('p','hero-name','SHEN ZIWEI'),node('h1','',data.title),node('p','hero-description','6 年车联网与产业数字化产品经验，参与从需求调研、方案设计、开发协同到上线迭代的 0–1 项目推进。'));const stats=node('div','stats');[['6年','产品设计经验'],['0–1','孵化项目'],['20+','跨行业产品'],['B&C','全流程推动']].forEach(([value,label])=>{const item=node('div');item.append(node('strong','',value),node('span','',label));stats.append(item)});article.append(stats);const enter=node('button','enter-portfolio','查看项目 →');enter.onclick=()=>setMenu(true);article.append(enter,node('p','cover-ribbon','Product Design Portfolio'));}
+ else{article.append(node('h1','',data.title));
+  if(i===17){const qr=node('div','contact-visual');const im=node('img');im.src=p.src;im.alt='联系二维码';qr.append(im);article.append(qr,node('p','contact-instruction','长按识别二维码，与我联系'));}
+  else if(i===1){const grid=node('div','strengths');for(let j=0;j<4;j++){const card=node('section','strength');card.append(node('span','strength-number',`0${j+1}`),node('h2','',data.blocks[j*2].text),node('p','',data.blocks[j*2+1].text));grid.append(card)}article.append(grid);}
+  else{const figure=node('figure','case-figure');figure.append(artwork(p,i,'mobile-artwork'),node('figcaption','','查看完整画板 ↗'));article.append(figure);const copy=node('div','case-copy');data.blocks.forEach(b=>copy.append(node(b.heading?'h2':'p','',b.text)));article.append(copy);}
  }
- function fromHash(){const match=location.hash.match(/^#page-(\d+)$/);go(match?Number(match[1])-1:0,false)}
- document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#page-"]');if(!a)return;e.preventDefault();go(Number(a.hash.slice(6))-1);setMenu(false)});
- prev.onclick=()=>go(current-1);next.onclick=()=>go(current+1);window.addEventListener('hashchange',fromHash);
+ if(i<17){const next=node('button','chapter-next',`下一页 · ${i===0?'个人优势':'继续阅读'} →`);next.onclick=()=>goTo(i+1);article.append(next)}return article;
+}
+Promise.all(['pages.json','mobile.json'].map(url=>fetch(url).then(r=>{if(!r.ok)throw Error(url);return r.json()}))).then(([pages,texts])=>{
+ pages.forEach((p,i)=>{const section=node('section','page');section.id=`page-${i+1}`;section.setAttribute('aria-label',`${i+1} / ${pages.length} ${p.title}`);const desktop=node('div','desktop-slide'),label=node('div','page-label');label.append(node('span','',`${String(i+1).padStart(2,'0')} / ${p.group} · ${p.title}`),node('span','','点击画板放大 ↗'));desktop.append(label,artwork(p,i,'artwork'));section.append(desktop,mobileArticle(p,texts[i],i));main.append(section)});
+ [{name:'三维工场',start:2,end:10},{name:'车联网',start:10,end:13},{name:'法务 AI',start:13,end:16}].forEach(g=>{const group=node('section','project-group');group.append(node('h2','',g.name));for(let i=g.start;i<g.end;i++){const a=node('a');a.href=`#page-${i+1}`;a.append(node('small','',String(i-g.start+1).padStart(2,'0')),document.createTextNode(pages[i].title));group.append(a)}links.append(group)});setupDeck(pages);
+}).catch(()=>{main.textContent='页面暂时未能加载，请刷新重试。'});
+function setupDeck(pages){
+ const slides=[...main.children],prev=document.querySelector('#previous'),next=document.querySelector('#next');let current=0;
+ function go(index,write=true){const before=current;current=Math.max(0,Math.min(slides.length-1,index));if(slides[before].contains(document.activeElement)&&before!==current)document.activeElement.blur();main.style.transform=`translate3d(${-current*100}%,0,0)`;slides.forEach((s,i)=>{s.inert=i!==current;s.setAttribute('aria-hidden',String(i!==current))});slides[current].querySelector('.mobile-article').scrollTop=0;document.querySelector('#deck-progress').textContent=`${String(current+1).padStart(2,'0')} / ${slides.length}`;prev.disabled=current===0;next.disabled=current===slides.length-1;const active=current===0?'home':current===1||current===16?'about':current===17?'contact':'projects';document.querySelectorAll('[data-nav]').forEach(a=>{if(a.dataset.nav===active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});if(write)history.replaceState(null,'',`#page-${current+1}`);for(let i=current;i<=Math.min(current+1,slides.length-1);i++)slides[i].querySelectorAll('img').forEach(img=>img.loading='eager');}
+ goTo=go;function fromHash(){const m=location.hash.match(/^#page-(\d+)$/);go(m?Number(m[1])-1:0,false)}
+ document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#page-"]');if(!a)return;e.preventDefault();go(Number(a.hash.slice(6))-1);setMenu(false)});prev.onclick=()=>go(current-1);next.onclick=()=>go(current+1);window.addEventListener('hashchange',fromHash);
  let lastWheel=0,total=0,consumed=false,lastFlip=0;
- window.addEventListener('wheel',e=>{
-  if(viewer.open||!contents.hidden||e.ctrlKey)return;
-  e.preventDefault();const now=performance.now();if(now-lastWheel>200){total=0;consumed=false}lastWheel=now;
-  if(consumed||now-lastFlip<600)return;
-  const delta=Math.abs(e.deltaY)>=Math.abs(e.deltaX)?e.deltaY:e.deltaX;
-  total+=delta*(e.deltaMode===1?16:e.deltaMode===2?innerHeight:1);
-  if(Math.abs(total)>=35){go(current+(total>0?1:-1));consumed=true;lastFlip=now;total=0}
- },{passive:false});
- document.addEventListener('keydown',e=>{
-  if(viewer.open||!contents.hidden||e.altKey||e.ctrlKey||e.metaKey)return;
-  if(e.key===' '&&e.target.closest('button,a'))return;
-  const forward=['ArrowDown','ArrowRight','PageDown',' '].includes(e.key),back=['ArrowUp','ArrowLeft','PageUp'].includes(e.key);
-  if(forward||back){e.preventDefault();if(!e.repeat)go(current+(forward?1:-1))}
-  if(e.key==='Home'){e.preventDefault();go(0)}if(e.key==='End'){e.preventDefault();go(slides.length-1)}
- });
- let touch=null,suppressClickUntil=0;
- main.addEventListener('touchstart',e=>{if(e.touches.length===1)touch={x:e.touches[0].clientX,y:e.touches[0].clientY};else touch=null},{passive:true});
- main.addEventListener('touchend',e=>{if(!touch)return;const dx=touch.x-e.changedTouches[0].clientX,dy=touch.y-e.changedTouches[0].clientY;touch=null;const delta=Math.abs(dx)>Math.abs(dy)?dx:dy;if(Math.abs(delta)>45){suppressClickUntil=performance.now()+500;go(current+(delta>0?1:-1))}},{passive:true});
- main.addEventListener('click',e=>{if(performance.now()<suppressClickUntil){e.preventDefault();e.stopImmediatePropagation()}},true);
- fromHash();
+ window.addEventListener('wheel',e=>{if(mobile.matches||viewer.open||!contents.hidden||e.ctrlKey)return;e.preventDefault();const now=performance.now();if(now-lastWheel>200){total=0;consumed=false}lastWheel=now;if(consumed||now-lastFlip<600)return;const delta=Math.abs(e.deltaY)>=Math.abs(e.deltaX)?e.deltaY:e.deltaX;total+=delta*(e.deltaMode===1?16:e.deltaMode===2?innerHeight:1);if(Math.abs(total)>=35){go(current+(total>0?1:-1));consumed=true;lastFlip=now;total=0}},{passive:false});
+ document.addEventListener('keydown',e=>{if(viewer.open||!contents.hidden||e.altKey||e.ctrlKey||e.metaKey)return;if(e.key===' '&&e.target.closest('button,a'))return;const forward=(mobile.matches?['ArrowRight','PageDown']:['ArrowDown','ArrowRight','PageDown',' ']).includes(e.key),back=(mobile.matches?['ArrowLeft','PageUp']:['ArrowUp','ArrowLeft','PageUp']).includes(e.key);if(forward||back){e.preventDefault();if(!e.repeat)go(current+(forward?1:-1))}if(e.key==='Home'){e.preventDefault();go(0)}if(e.key==='End'){e.preventDefault();go(slides.length-1)}});
+ let touch=null,suppressClickUntil=0;main.addEventListener('touchstart',e=>{touch=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null},{passive:true});main.addEventListener('touchcancel',()=>touch=null,{passive:true});main.addEventListener('touchend',e=>{if(!touch)return;const dx=touch.x-e.changedTouches[0].clientX,dy=touch.y-e.changedTouches[0].clientY;touch=null;const horizontal=Math.abs(dx)>Math.abs(dy)*1.3;if(mobile.matches&&!horizontal)return;const delta=horizontal?dx:dy;if(Math.abs(delta)>55){suppressClickUntil=performance.now()+500;go(current+(delta>0?1:-1))}},{passive:true});main.addEventListener('click',e=>{if(performance.now()<suppressClickUntil){e.preventDefault();e.stopImmediatePropagation()}},true);fromHash();
 }
