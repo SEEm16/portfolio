@@ -5,3 +5,5 @@
 }
 @media(max-width:370px){.site-header{padding:0 14px}.header-inner{gap:8px}.brand{font-size:12px}nav{gap:14px}nav a,nav button{font-size:12px}.mobile-article{padding-left:20px;padding-right:20px}.hero-name{font-size:30px}.mobile-cover h1{font-size:27px}.deck-bottom{padding-left:14px;padding-right:14px}.reading{gap:8px}}
 @media(prefers-reduced-motion:reduce){main{transition:none}}
+
+@media(max-width:700px){img.mobile-artwork{height:auto;cursor:default}}

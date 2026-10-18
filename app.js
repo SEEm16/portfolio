@@ -14,7 +14,7 @@ function mobileArticle(p,data,i){
  else{article.append(node('h1','',data.title));
   if(i===17){const qr=node('div','contact-visual');const im=node('img');im.src=p.src;im.alt='联系二维码';qr.append(im);article.append(qr,node('p','contact-instruction','长按识别二维码，与我联系'));}
   else if(i===1){const grid=node('div','strengths');for(let j=0;j<4;j++){const card=node('section','strength');card.append(node('span','strength-number',`0${j+1}`),node('h2','',data.blocks[j*2].text),node('p','',data.blocks[j*2+1].text));grid.append(card)}article.append(grid);}
-  else{const figure=node('figure','case-figure');figure.append(artwork(p,i,'mobile-artwork'),node('figcaption','','查看完整画板 ↗'));article.append(figure);const copy=node('div','case-copy');data.blocks.forEach(b=>copy.append(node(b.heading?'h2':'p','',b.text)));article.append(copy);}
+  else{const figure=node('figure','case-figure');const image=node('img','mobile-artwork');image.src=p.src;image.alt=`${p.group}：${p.title}`;image.width=p.width;image.height=p.height;image.loading='lazy';image.decoding='async';figure.append(image);article.append(figure);const copy=node('div','case-copy');data.blocks.forEach(b=>copy.append(node(b.heading?'h2':'p','',b.text)));article.append(copy);}
  }
  if(i<17){const next=node('button','chapter-next',`下一页 · ${i===0?'个人优势':'继续阅读'} →`);next.onclick=()=>goTo(i+1);article.append(next)}return article;
 }
